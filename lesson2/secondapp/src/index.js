@@ -4,10 +4,17 @@ import './index.css';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 
+const nav = {
+  "main": '/index',
+  "about": '/about',
+  "price": '/buy/price',
+  "kekw": '/kekw'
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App title="my site" hero="go go go" nav={nav}/>
   </React.StrictMode>
 );
 
