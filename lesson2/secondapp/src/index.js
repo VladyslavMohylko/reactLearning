@@ -5,7 +5,7 @@ import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 
 const nav = {
-  "main": '/index',
+  "main": 'https://www.instagram.com/',  //test
   "about": '/about',
   "price": '/buy/price',
   "kekw": '/kekw'

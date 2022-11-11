@@ -6,6 +6,7 @@ class Header extends React.Component {
     render() {
         return (
             <header className="App-header">
+                <h1>{this.props.title}</h1>
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
                     Edit <code>src/App.js</code> and save to reload.

@@ -5,11 +5,9 @@ import './Footer.css';
 class Footer extends React.Component {
     render() {
         return (
-            <footer className="section footer-classic contex-dark bg-image" 
-            style={{ color: "#fff", padding: "10px" }}>
-                <p>
-                    Copyright
-                </p>
+            <footer className="section footer-classic contex-dark bg-image"
+                style={{ color: "#fff", padding: "10px" }}>
+                <p>{this.props.hero}</p>
             </footer>
         )
     }

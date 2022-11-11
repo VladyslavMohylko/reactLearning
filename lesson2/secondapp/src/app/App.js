@@ -4,19 +4,22 @@ import Header from '../header/Header';
 import Nav from '../nav/Nav';
 import Main from '../main/Main';
 import Footer from '../footer/Footer';
+import Form from '../form/Form';
 
 
 class App extends React.Component {
   render() {
     const nav = this.props.nav;
+    const title = this.props.title;
+    const hero = this.props.hero;
+
     return (
       <div className="App">
-        <Header />
-        <h1>{this.props.title}</h1>
+        <Header title={title}/>
         <Nav nav={nav}/>
         <Main />
-        <p>{this.props.hero}</p>
-        <Footer />
+        <Form />
+        <Footer hero={hero}/>
       </div>
     );
   }
