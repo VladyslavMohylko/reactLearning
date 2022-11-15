@@ -5,7 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const nav = {
-  main: '/main'
+  main: '/main',
+  about: '/about',
+  contacts: '/contacts'
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

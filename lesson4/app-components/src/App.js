@@ -1,5 +1,10 @@
 import React from 'react';
+import {BrowserRouter as Router, Routes as Switch, Route, Link} from 'react-router-dom';
 import './App.css';
+import Home from './Main';
+import About from './About';
+import Contacts from './Contacts';
+import Other from './Other';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,45 +14,27 @@ class App extends React.Component {
     }
   }
 
-  // static getDerivedStateFromProps(props, state) {
-  //   return {text: props.text}
-  // }
-
-  test() {
-    return 111;
-  }
-
-  changer = (event) => {
-    console.log(event.target.value);
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ text: 'Component did mount' })
-    }, 2000);
-  }
-
   render() {
     const a = 55;
     const b = {name: 'Ivan'};
     let c = ['ku', 'hai', 'cool'];
     return (
-      <div>
-        <p>{this.state.text}</p>
-        <h1>{3 + 6}</h1>
-        <ul>
-          {c.map(elem => {
-            return <li key={elem}>{elem}</li>
-          })}
-        </ul>
-        <div>{Math.random()}</div>
-        <div>{this.test()}
-          <p>{a + 'HELLO'}</p>
+      <Router>
+        <div className='App'>
+          <ul>
+            <li><a href="/">Main</a></li>
+            <li><a href='/ab'>About</a></li>
+            <li><a href='/con'>Contacts</a></li>
+          </ul>
+          <Switch>
+            <Route exact path='/' element={<Home />}></Route>
+            <Route exact path='/ab' element={<About />}></Route>
+            <Route exact path='/con' element={<Contacts />}></Route>
+            <Route path='*' element={<Other />}></Route>
+          </Switch>
         </div>
-        <div {...b}></div>
-        <input defaultValue="hello" onChange={this.changer}/>
-      </div>
-    );
+      </Router>
+      );
   }
 }
 
